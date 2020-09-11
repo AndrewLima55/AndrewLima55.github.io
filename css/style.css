@@ -1,0 +1,40 @@
+    img {
+               height: 200px;width: 210px;
+            }
+        
+          li{
+                color:#00b500;
+            }
+       
+          h1{
+                color:white;text-align: center; font-size: 35px;
+            }
+       
+           h2{
+                color:red;
+            }
+        
+            h3{
+                 color: #0000EE
+             }
+      
+           body  {
+                color:white;background-color:#191a19;"
+              }
+       
+           table {
+               border:3px;
+             }
+        
+      
+        .light-purple{
+            background-color: #bb86fc; color: white;
+        }
+
+        .dark-purple{
+            background-color: #3700b3; color: white;
+        }
+
+        .light-green{
+            background-color: #00ff44; color: black;
+        }
