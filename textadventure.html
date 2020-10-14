@@ -2,16 +2,8 @@
     <html>
         <head>
             <title>Page Title</title>
-            <link rel="stylesheet"type="text/css" href="css/navbar.css"/>
+            <link rel="stylesheet" type="text/css" href="css/navbar.css"/>
 
-                <style>
-                    .size{
-                        text-align: center; font-size: 15px;
-                      }
-                </style>
-        </head>
-
-    
         <style>
             #container{
                 position: absolute;
@@ -19,11 +11,11 @@
                 right: 0px;
                 top: 90px;
                 bottom: 0px;
-                background-color: red;
+               
 
             }
             #left_pane{
-                background-color: green;
+                
                 height: 100%;
                 width: 56%;
                 float: left;
@@ -33,21 +25,21 @@
             }
 
             #right_pane{
-                background-color: blue;
+               
                 height: 100%;
                 width: 44%;
                 float: left;
             }
 
             #story_text{
-                background-color: yellow;
+              
                 height: 80%;
-                color: #;
+                color: red;
                 font-weight: #;
             }
 
             #button_choices{
-                background-color: pink;
+                
                 height:20%;
                   display: flex;
                 align-items: center;
@@ -72,6 +64,17 @@
             }
 
         </style>
+
+
+                <style>
+                    .size{
+                        text-align: center; font-size: 15px;
+                      }
+                </style>
+        </head>
+
+    
+ 
     <body>
 
      <ul class="navbar">
@@ -91,6 +94,7 @@
             </li>
         </ul>
 
+        
     <div id="container">
     <div id="left_pane">
         <img id="story_img" src="images/cat_grey.jpg"/>
@@ -98,19 +102,182 @@
     </div>
     <div id="right_pane">
         <div id="story_text">
-            <p></p>
-            <p> It is the year 2020</p>
-            <p></p>
         
-        </div>
-        <div id="button_choices">
-
-            <a class="buttons" href="">yes</a>
-            <a class="buttons" href="">no</a>
-        
+            <p></p>
+            <p id="p1"> It is the year 2020</p>
+            <p id="p2">welcome</p>
+            <p id="p3">your name is john</p>
+            <p></p>
+            <div id="button_choices">
+                <a id="b1" class="buttons" href="#" onclick="bclick(1)">Yes</a>
+                <a id="b2" class="buttons" href="#" onclick="bclick(2)">No</a>
+            </div>
         </div>
     </div>
-    </div>
+    
+    <script>
+        var b1 = document.getElementById("b1");
+        var b2 = document.getElementById("b2");
+        var img = document.getElementById("story_img");
+        var p1 = document.getElementById("p1");
+        var p2 = document.getElementById("p2");
+        var p3 = document.getElementById("p3");
+        var state = "intro";
+        intro();
 
+        function intro(){
+            img.src = "images/cat_grey.jpg";
+            p1.innerHTML = "It is 2040 and you are a American spy named James and you have been chosen to take a solo mission to the Russian island of Zantifa to collect an important flash drive. The flash drive is said to be in a cave on the island. Are you up for the challenge?";
+            p2.innerHTML = "do you accept the challenge or Not";
+            p3.innerHTML = " ";
+            b1.innerHTML = "You accept the challenge";
+            b2.innerHTML = "you dont accept the challenge";
+        }
+        function youAccept(){
+            img.src = "images/cat_grey.jpg";
+            p1.innerHTML = "You board a ship and off you go to the Russian island Zantifa.which item do you want to use to help you navigate the island so you can get the flash drive.";
+            p2.innerHTML = "the items that you can choose are a map and a bottle of coke. Which item do you choose";
+            p3.innerHTML = " ";
+            b1.innerHTML = "The map";
+            b2.innerHTML = "The bottle of coke";
+            b3.style.display = "block";
+        }
+        function stayInSchool(){
+            img.src = "images/cat_grey.jpg";
+            p1.innerHTML = "beging training for powers";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+        }
+        function escape(){
+            img.src="";
+            p1.innerHTML = "do you want to join";
+            p2.innerHTML = "do you want to fight";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Join";
+            b2.innerHTML = "Fight";
+        }
+        function intenseTraining(){
+            img.src="#";
+            p1.innerHTML = " join or fight";
+            p2.innerHTML = "fight or join";
+            p3.innerHTML = " ";
+            b1.innerHTML = "leave";
+            b2.innerHTML = "leave";
+        }
+        function join(){
+            img.src="images/cat_grey.jpg";
+            p1.innerHTML = "";
+            p2.innerHTML = "";
+            p3.innerHTML = "";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+        }
+        function fight(){
+            img.src="#";
+            p1.innerHTML = "#";
+            p2.innerHTML = "#";
+            p3.innerHTML = "Next?";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+        }
+  //////State Machine
+        function bclick (button){
+            if (state == "intro"){
+                if (button == 1){
+                    youAccept();
+                    state ="youAccept";
+                }
+                else if(button == 2){
+                    youDontAccept();
+                    state ="youDontAccept";
+                }
+            }
+            else if(state == "stayInSchool"){
+                if (button == 1){
+                    escape();
+                    state = "escape";
+                }
+                else if(button == 2){
+                    intenseTraining();
+                    state="intenseTraining";
+                }
+            }
+            else if(state == "goToCamp"){
+                if (button == 1){
+                    escape();
+                    state = "escape";
+                }
+                else if (button == 2){
+                    intenseTraining();
+                    state="intenseTraining";
+                }
+            }
+            else if(state == "escape"){
+                if (button == 1){
+                    join();
+                    state = "join";
+                }
+                else if (button == 2){
+                    fight();
+                    state="fight";
+                }
+            }
+            else if (state == "intenseTraining"){
+                if (button == 1){
+                    join();
+                    state = "join";
+                }
+                else if (button == 2){
+                    fight();
+                    state="fight";
+                }
+            }
+            else if (state == "join"){
+                if (button == 1){
+                    Machu();
+                    state = "Machu";
+                }
+                else if (button == 2){
+                    Catacombs();
+                    state="Catacombs";
+                }
+            }
+            else if (state == "fight"){
+                if (button == 1){
+                    Machu();
+                    state = "Machu";
+                }
+                else if (button == 2){
+                    Catacombs();
+                    state="Catacombs";
+                }
+            }
+            else if (state == "Machu"){
+                if (button == 1){
+                    Join();
+                    state = "Join";
+                }
+                else if (button == 2){
+                    Fight();
+                    state="Fight";
+                }
+            }
+            else if (state == "Catacombs"){
+                if (button == 1){
+                    Join();
+                    state = "Join";
+                }
+                else if (button == 2){
+                    Fight();
+                    state="Fight";
+                }
+            }
+        }
+
+
+       
+    </script>
     </body>
 </html>
