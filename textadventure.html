@@ -32,7 +32,7 @@
             }
 
             #story_text{
-              
+                background-color:#;
                 height: 80%;
                 color: darkblue;
                 font-weight: #;
@@ -44,6 +44,11 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                position: absolute;
+                bottom: 0px;
+                height: 150px;
+                left:56%;
+                right:0px;
             }
 
             #story_img{
@@ -62,6 +67,13 @@
                 font-size: 16px;
                 margin: 10px;
             }
+
+                    
+        .buttons:hover {
+            background-color:black;
+            background-image: linear-gradient(to bottom,#ff0000,#f1ff59);
+            color:black;
+        }
 
         </style>
 
@@ -134,7 +146,7 @@
 
      function intro(){
             img.src = "images/Russia Map.jpg";
-            p1.innerHTML = "It is 2040 and you are a American spy named Chris and you have been chosen to take a solo mission to the cold Russian island of Zantifa to seize an important flash drive. The flash drive is said to be in a cave on the island. Are you up for the challenge?";
+            p1.innerHTML = "It is 2040 and you are a American spy named Chris and have been chosen to take a solo mission to the cold Russian island of Zantifa to seize an important flash drive. The flash drive is said to be in a cave on the island. Are you up for the challenge?";
             p2.innerHTML = "do you accept the challenge";
             p3.innerHTML = " ";
             b1.innerHTML = "accept the challenge";
@@ -144,7 +156,7 @@
         }
         function youAccept(){
             img.src = "images/Map_And_Coke_New.png";
-            p1.innerHTML = "You board a ship and set sail to the Russian island. Which item do you want to use to help you navigate the island so you can get the flash drive.";
+            p1.innerHTML = "You board a ship and set sail to the cold island. Which item do you want to use to help you navigate the island so you can get the flash drive.";
             p2.innerHTML = "the items that you can choose are a map or a bottle of coke. Which item do you choose";
             p3.innerHTML = " ";
             b1.innerHTML = "The map";
@@ -319,7 +331,7 @@
 
             function stayWithPolarBear(){
             img.src="images/Polar_Bear_Growl.jpg";
-            p1.innerHTML = "The bear attacked you.";
+            p1.innerHTML = "The polar bear attacked you.";
             p2.innerHTML = " ";
             p3.innerHTML = " ";
             b1.innerHTML = " ";
