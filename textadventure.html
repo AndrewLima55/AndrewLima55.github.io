@@ -34,14 +34,14 @@
             #story_text{
               
                 height: 80%;
-                color: red;
+                color: darkblue;
                 font-weight: #;
             }
 
             #button_choices{
                 
                 height:20%;
-                  display: flex;
+                display: flex;
                 align-items: center;
                 justify-content: center;
             }
@@ -109,15 +109,21 @@
             <p id="p3">your name is john</p>
             <p></p>
             <div id="button_choices">
+
                 <a id="b1" class="buttons" href="#" onclick="bclick(1)">Yes</a>
                 <a id="b2" class="buttons" href="#" onclick="bclick(2)">No</a>
+                <a id="b3" class="buttons" href="#" onclick="bclick(3)">yes</a>
+                <a id="b4" class="buttons" href="#" onclick="bclick(4)">no</a>
+
             </div>
         </div>
     </div>
-    
+
     <script>
         var b1 = document.getElementById("b1");
         var b2 = document.getElementById("b2");
+        var b3 = document.getElementById("b3");
+        var b4 = document.getElementById("b4");
         var img = document.getElementById("story_img");
         var p1 = document.getElementById("p1");
         var p2 = document.getElementById("p2");
@@ -125,63 +131,236 @@
         var state = "intro";
         intro();
 
-        function intro(){
-            img.src = "images/cat_grey.jpg";
-            p1.innerHTML = "It is 2040 and you are a American spy named James and you have been chosen to take a solo mission to the Russian island of Zantifa to collect an important flash drive. The flash drive is said to be in a cave on the island. Are you up for the challenge?";
-            p2.innerHTML = "do you accept the challenge or Not";
+
+     function intro(){
+            img.src = "images/Russia Map.jpg";
+            p1.innerHTML = "It is 2040 and you are a American spy named John and you have been chosen to take a solo mission to the Russian island of Zantifa to seize an important flash drive as well as other Russian owned electronics. The flash drive is said to be in a cave on the island. Are you up for the challenge?";
+            p2.innerHTML = "do you accept the challenge";
             p3.innerHTML = " ";
-            b1.innerHTML = "You accept the challenge";
-            b2.innerHTML = "you dont accept the challenge";
+            b1.innerHTML = "accept the challenge";
+            b2.innerHTML = "dont accept the challenge";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
         function youAccept(){
-            img.src = "images/cat_grey.jpg";
-            p1.innerHTML = "You board a ship and off you go to the Russian island Zantifa.which item do you want to use to help you navigate the island so you can get the flash drive.";
-            p2.innerHTML = "the items that you can choose are a map and a bottle of coke. Which item do you choose";
+            img.src = "images/Map_And_Coke_New.png";
+            p1.innerHTML = "You board a ship and off you go to the Russian island.which item do you want to use to help you navigate the island so you can get the flash drive.";
+            p2.innerHTML = "the items that you can choose are a map or a bottle of coke. Which item do you choose";
             p3.innerHTML = " ";
             b1.innerHTML = "The map";
             b2.innerHTML = "The bottle of coke";
-            b3.style.display = "block";
+            b3.style.display = "none";
+            b4.style.display = "none";
         }
-        function stayInSchool(){
-            img.src = "images/cat_grey.jpg";
-            p1.innerHTML = "beging training for powers";
+        function theMap(){
+            img.src = "images/Two_Snow_Roads.jpg";
+            p1.innerHTML = "The map of the island displays a few locations near you, the closest to you being a small village with a frozen stream by it and next closest being a small forest.";
+            p2.innerHTML = "Do you choose to go the the forest or to the village?";
+            p3.innerHTML = " ";
+            b1.innerHTML = "the village";
+            b2.innerHTML = "the forest";
+        }
+        function theVillage(){
+            img.src="images/Russian_Village.jpg";
+            p1.innerHTML = "you take a short walk over a hill and are greeted by some Russians and their pet bears. they soon realize that you are a foreigner and get mad. What do you do now?";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "run away";
+            b2.innerHTML = "ride one of their bears";
+        }
+        function theForest(){
+            img.src="images/Snow_Forest.jpg";
+            p1.innerHTML = "you are walking through the forest of tall pine trees and you see a waterfall where the forest ends. Do you choose to explore the waterfall or keep exploring the forest?";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "explore the waterfall";
+            b2.innerHTML = "keep exploring the forest";
+        }
+        function rideBear(){
+            img.src="images/Bear_Running_1.jpg";
+            p1.innerHTML = "you jump on the back of a large brown bear and it starts running away from the angry Russians.what do you do now?";
+            p2.innerHTML = "";
+            p3.innerHTML = "";
+            b1.innerHTML = "Go to the forest from before";
+            b2.innerHTML = "stay with the bear";
+ 
+        }
+  
+            function theBottleOfCoke(){
+            img.src="images/Cold_Coke.jpg";
+            p1.innerHTML = "you drank the refreshing coke but it did not help you find the flash drive.";
             p2.innerHTML = " ";
             p3.innerHTML = " ";
             b1.innerHTML = "Yes";
             b2.innerHTML = "No";
+            b1.style.display = "none";
+            b2.style.display = "none";
         }
-        function escape(){
-            img.src="";
-            p1.innerHTML = "do you want to join";
-            p2.innerHTML = "do you want to fight";
-            p3.innerHTML = " ";
-            b1.innerHTML = "Join";
-            b2.innerHTML = "Fight";
-        }
-        function intenseTraining(){
-            img.src="#";
-            p1.innerHTML = " join or fight";
-            p2.innerHTML = "fight or join";
-            p3.innerHTML = " ";
-            b1.innerHTML = "leave";
-            b2.innerHTML = "leave";
-        }
-        function join(){
+
+            function youDontAccept(){
             img.src="images/cat_grey.jpg";
-            p1.innerHTML = "";
+            p1.innerHTML = "you should have accepted :( ";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "none";
+            b2.style.display = "none";
+        }
+
+            function theWaterFall(){
+            img.src="images/Snow_Waterfall.jpg";
+            p1.innerHTML = "the tall waterfall has a rocky path up to the top of it and your map says that there is a cave near the top. Do you choose to ascend the rocky hill?";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Climb up the hill";
+            b2.innerHTML = "stay at the bottom of the waterfall";
+        }
+
+                    function dontAssend(){
+            img.src="images/Snow_Waterfall.jpg";
+            p1.innerHTML = "you are still at the bottom of the waterfall there is no flash drive here.";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "none";
+            b2.style.display = "none";
+         }
+
+            function exploreForest(){
+            img.src="images/Bear_With_Fish.jpg";
+            p1.innerHTML = "you keep exploring the forest to find a river with salmon, but you get attacked by a bear that had discovered the river before you.";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "none";
+            b2.style.display = "none";
+         }
+
+            function runAway(){
+            img.src="images/Running_Bear.jpg";
+            p1.innerHTML = "the Russians hop on their bears and quickly overtake you.";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Yes";
+            b2.innerHTML = "No";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            
+         }
+
+               function stayWithBear(){
+            img.src="images/Bear_In_Stream.jpg";
+            p1.innerHTML = "the bear goes to a river to eat some fish and throws you off. You realize that you lost your map while with the bear and you are lost."
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "yes";
+            b2.innerHTML = "no";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            
+         }
+
+            function assendWaterFall(){
+            img.src="images/Cave_And_Cabin.png";
+            p1.innerHTML = "when you arrive at the top of the waterfall you see the cave in the distance but you also see a small wooden cabin. do you want to go to the cave or to the cabin?";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Enter the cave";
+            b2.innerHTML = "Explore the cabin";
+         }
+
+            function exploreCabin(){
+            img.src="images/Wooden_Sign.jpg";
+            p1.innerHTML = "you enter the cabin and see an old sign that says flash drives and other electronics are down the right passage in the cave.";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "go back to the cave";
+            b2.innerHTML = "Stay in the cabin";
+            
+         }
+
+            function enterCave(){
+            img.src="images/Snow_Cave.jpg";
+            p1.innerHTML = "you see two passages in the cave one of them goes right and the other goes left.";
+            p2.innerHTML = "Which way do you choose?";
+            p3.innerHTML = " ";
+            b1.innerHTML = "Right passage";
+            b2.innerHTML = "Left passage";
+            
+            
+         }
+
+            function leftPassage(){
+            img.src="images/Polar_Bear_Sleeping.jpg";
+            p1.innerHTML = "you found a room with a polar bear sleeping in it";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = "run back to the right passage";
+            b2.innerHTML = "try to be friends with the polar bear";
+            
+            
+            
+         }
+
+            function rightPassage(){
+            img.src="images/Flash_Drive.jpg";
+            p1.innerHTML = "You enter the small cavern to see an array of electronic parts and computers.You see the flash drive that you were sent for and you quickly take it.";
+            p2.innerHTML = "you can now sail back to the U.S. and give the government the flash drive.";
+            p3.innerHTML = "Mission accomplished";
+            b1.innerHTML = "You Win";
+            b2.innerHTML = " ";
+            b2.style.display = "none";
+            
+            
+         }
+
+            function stayWithPolarBear(){
+            img.src="images/Polar_Bear_Growl.jpg";
+            p1.innerHTML = "the bear attacked you.";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = " ";
+            b2.innerHTML = " ";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            
+            
+         }
+
+                 function stayInCabin(){
+            img.src="images/Cabin_In_Snow.jpg";
+            p1.innerHTML = "the cabin is nice but staying in it doesnt help you find the flash drive";
+            p2.innerHTML = " ";
+            p3.innerHTML = " ";
+            b1.innerHTML = " ";
+            b2.innerHTML = " ";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            
+            
+         }
+
+            function youWin(){
+            img.src="images/You_Win_Screen.png";
+            p1.innerHTML = "congratulations you win.";
             p2.innerHTML = "";
-            p3.innerHTML = "";
-            b1.innerHTML = "Yes";
-            b2.innerHTML = "No";
-        }
-        function fight(){
-            img.src="#";
-            p1.innerHTML = "#";
-            p2.innerHTML = "#";
-            p3.innerHTML = "Next?";
-            b1.innerHTML = "Yes";
-            b2.innerHTML = "No";
-        }
+            p3.innerHTML = " ";
+            b1.innerHTML = "Restart";
+            b2.innerHTML = " ";
+            b1.style.display = "none";
+            b2.style.display = "none";
+            
+            
+         }
+
+
+
+
+
+
   //////State Machine
         function bclick (button){
             if (state == "intro"){
@@ -194,90 +373,137 @@
                     state ="youDontAccept";
                 }
             }
-            else if(state == "stayInSchool"){
+            else if(state == "youAccept"){
                 if (button == 1){
-                    escape();
-                    state = "escape";
+                    theMap();
+                    state = "theMap";
                 }
                 else if(button == 2){
-                    intenseTraining();
-                    state="intenseTraining";
+                    theBottleOfCoke();
+                    state="theBottleOfCoke";
                 }
             }
-            else if(state == "goToCamp"){
+            else if(state == "theMap"){
                 if (button == 1){
-                    escape();
-                    state = "escape";
+                    theVillage();
+                    state = "theVillage";
                 }
                 else if (button == 2){
-                    intenseTraining();
-                    state="intenseTraining";
+                    theForest();
+                    state="theForest";
                 }
             }
-            else if(state == "escape"){
+            else if(state == "theVillage"){
                 if (button == 1){
-                    join();
-                    state = "join";
+                    runAway();
+                    state = "runAway";
                 }
                 else if (button == 2){
-                    fight();
-                    state="fight";
+                    rideBear();
+                    state="rideBear";
                 }
             }
-            else if (state == "intenseTraining"){
+            else if (state == "theForest"){
                 if (button == 1){
-                    join();
-                    state = "join";
+                    theWaterFall();
+                    state = "theWaterFall";
                 }
                 else if (button == 2){
-                    fight();
-                    state="fight";
+                    exploreForest();
+                    state="exploreForest";
                 }
             }
-            else if (state == "join"){
+            else if (state == "theWaterFall"){
                 if (button == 1){
-                    Machu();
-                    state = "Machu";
+                    assendWaterFall();
+                    state = "assendWaterFall";
                 }
                 else if (button == 2){
-                    Catacombs();
-                    state="Catacombs";
+                    dontAssend();
+                    state="dontAssend";
                 }
             }
-            else if (state == "fight"){
+            else if (state == "assendWaterFall"){
                 if (button == 1){
-                    Machu();
-                    state = "Machu";
+                    enterCave();
+                    state = "enterCave";
                 }
                 else if (button == 2){
-                    Catacombs();
-                    state="Catacombs";
+                    exploreCabin();
+                    state="exploreCabin";
                 }
             }
-            else if (state == "Machu"){
+            else if (state == "rideBear"){
                 if (button == 1){
-                    Join();
-                    state = "Join";
+                    theForest();
+                    state = "theForest";
                 }
                 else if (button == 2){
-                    Fight();
-                    state="Fight";
+                    stayWithBear();
+                    state="stayWithBear";
                 }
             }
-            else if (state == "Catacombs"){
+            else if (state == "assendWaterFall"){
                 if (button == 1){
-                    Join();
-                    state = "Join";
+                    enterCave();
+                    state = "enterCave";
                 }
                 else if (button == 2){
-                    Fight();
-                    state="Fight";
+                    exploreCabin();
+                    state = "exploreCabin";
                 }
             }
+            else if (state == "exploreCabin"){
+                if(button == 1){
+                    enterCave();
+                    state = "enterCave";
+                }
+                else if (button == 2){
+                     stayInCabin();
+                    state = "stayInCabin";
+                }
+            }
+            else if (state == "enterCave"){
+                if(button == 1){
+                    rightPassage();
+                    state = "rightPassage";
+                }
+                else if (button == 2){
+                    leftPassage();
+                    state = "leftPassage";
+                }
+            }
+               else if (state == "leftPassage"){
+                if(button == 1){
+                    rightPassage();
+                    state = "rightPassage";
+                }
+                else if (button == 2){
+                    stayWithPolarBear();
+                    state = "stayWithPolarBear";
+                }
+            }
+                else if (state == "rightPassage"){
+                if(button == 1){
+                    youWin();
+                    state = "youWin";
+                }
+                else if (button == 2){
+                     youWin();
+                    state = "youWin";
+                }
+            }
+
+            
+            
         }
 
-
-       
     </script>
     </body>
 </html>
+
+
+
+
+
+
